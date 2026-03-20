@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to an external stylesheet -->
+    <style>
+        /* Optional: Add some basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color:lightcyan;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .forgot-container {
+            background-color: lightskyblue;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .forgot-container h2 {
+            margin-bottom: 20px;
+        }
+        .forgot-container input[type="email"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .forgot-container input[type="rewrite password"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .forgot-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color:rgb(12, 13, 12);
+            cursor: pointer;
+        }
+        .forgot-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="forgot-container">
+        <h2>Forgot Password</h2>
+        <form id="forgot-form">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="rewrite password" id="rewrite password" name="rewrite password" placeholder="Rewrite password" required>
+            <button type="submit">Reset Password</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script>
+        document.getElementById('forgot-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            // Here you would typically send the email to your backend for processing
+            // For example, you might use fetch() to make an API call
+            document.getElementById('message').innerHTML = `If an account with email <strong>${email}</strong> exists, a password reset link will be sent.`;
+        });
+    </script>
+</body>
+</html>
